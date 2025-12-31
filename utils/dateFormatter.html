@@ -1,0 +1,28 @@
+// utils/dateFormatter.ts
+
+/**
+ * Formats a date string into a human-readable format (e.g., "January 1, 2024").
+ *
+ * @param dateString The date string to format.  Must be a valid date format
+ * @returns The formatted date string, or "Invalid Date" if the input is invalid.
+ */
+export function formatDate(dateString: string): string {
+  try {
+    const date = new Date(dateString);
+
+    if (isNaN(date.getTime())) {
+      return "Invalid Date";
+    }
+
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+
+    return date.toLocaleDateString(undefined, options);
+  } catch (error) {
+    console.error("Error formatting date:", error);
+    return "Invalid Date";
+  }
+}
