@@ -1,0 +1,62 @@
+import { render } from 'react-dom';
+import React from 'react';
+import Header from './components/header';
+import Footer from './components/footer';
+import ArticleList from './components/articleList';
+import { fetchArticles } from './utils/api';
+
+interface Article {
+  id: string;
+  title: string;
+  author: string;
+  date: string;
+  summary: string;
+  content: string;
+}
+
+const App: React.FC = () => {
+  const [articles, setArticles] = React.useState<Article[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const getArticles = async () => {
+      try {
+        const data = await fetchArticles();
+        setArticles(data);
+        setLoading(false);
+      } catch (e: any) {
+        setError('Failed to load articles.');
+        setLoading(false);
+        console.error(e);
+      }
+    };
+
+    getArticles();
+  }, []);
+
+  return (
+    <div className="bg-gray-50 min-h-screen flex flex-col">
+      <Header />
+      <main className="container mx-auto py-6 flex-grow">
+        {loading && (
+          <div className="text-center text-gray-500">Loading articles...</div>
+        )}
+        {error && (
+          <div className="text-center text-red-500">{error}</div>
+        )}
+        {!loading && !error && (
+          <ArticleList articles={articles} />
+        )}
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const root = document.getElementById('root');
+if (root) {
+  render(<App />, root);
+} else {
+  console.error('Root element not found in the document.');
+}
