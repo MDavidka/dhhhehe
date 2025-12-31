@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "The Future of AI in Web Development",
+    "author": "John Doe",
+    "date": "2024-01-15",
+    "summary": "Explore how artificial intelligence is transforming the landscape of web development, from automated code generation to intelligent design tools.",
+    "content": "AI is rapidly changing how websites are built and maintained..."
+  },
+  {
+    "id": "2",
+    "title": "Mastering TypeScript for Large-Scale Applications",
+    "author": "Jane Smith",
+    "date": "2024-02-20",
+    "summary": "Learn best practices for using TypeScript in complex web applications, including modular architecture, advanced types, and tooling.",
+    "content": "TypeScript's strong typing and tooling support make it ideal for large projects..."
+  },
+  {
+    "id": "3",
+    "title": "Responsive Design Techniques for Mobile-First Development",
+    "author": "David Lee",
+    "date": "2024-03-10",
+    "summary": "Discover the latest techniques for creating responsive websites that prioritize mobile users, including flexible layouts, media queries, and touch-friendly interactions.",
+    "content": "With the increasing use of mobile devices, responsive design is more important than ever..."
+  },
+  {
+    "id": "4",
+    "title": "The Power of CSS Grid and Flexbox",
+    "author": "Emily White",
+    "date": "2024-04-05",
+    "summary": "Unleash the power of CSS Grid and Flexbox to create complex and dynamic layouts with ease. Explore advanced techniques for alignment, distribution, and responsiveness.",
+    "content": "CSS Grid and Flexbox provide powerful tools for modern web layout..."
+  },
+  {
+    "id": "5",
+    "title": "Building Accessible Web Applications",
+    "author": "Michael Brown",
+    "date": "2024-05-12",
+    "summary": "Learn how to build web applications that are accessible to users with disabilities, following WCAG guidelines and best practices for semantic HTML, ARIA attributes, and keyboard navigation.",
+    "content": "Accessibility is a crucial aspect of web development that ensures inclusivity..."
+  }
+]
