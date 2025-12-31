@@ -1,0 +1,33 @@
+import { Article } from '../types/Article';
+import { formatDate } from '../utils/dateFormatter';
+
+interface ArticleListProps {
+  articles: Article[];
+}
+
+const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+  return (
+    
+      {articles.map(article => (
+        
+          
+            
+              {article.title}
+            
+            
+              {formatDate(article.date)}
+            
+          
+          
+            {article.summary}
+          
+          
+            Read More
+          
+        
+      ))}
+    
+  );
+};
+
+export default ArticleList;
